@@ -9,6 +9,8 @@ interface Week {
   week_start_date: string;
   image_url: string;
   name: string;
+  description: string | null;
+  link: string | null;
   upvotes: number;
   downvotes: number;
 }
@@ -204,10 +206,26 @@ export default function BhenchodOfTheWeek() {
         </div>
       </div>
 
-      {/* Name */}
-      <h2 className="text-2xl sm:text-4xl font-semibold text-center mb-8 sm:mb-12">
-        {currentWeek.name}
-      </h2>
+      {/* Name + Description */}
+      <div className="text-center mb-8 sm:mb-12">
+        <h2 className="text-2xl sm:text-4xl font-semibold">
+          {currentWeek.link ? (
+            <a
+              href={currentWeek.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-4 hover:text-accent transition-colors"
+            >
+              {currentWeek.name}
+            </a>
+          ) : (
+            currentWeek.name
+          )}
+        </h2>
+        {currentWeek.description && (
+          <p className="text-muted text-base sm:text-lg mt-2">{currentWeek.description}</p>
+        )}
+      </div>
 
       {/* Vote Buttons */}
       <div className="flex justify-center items-center gap-8 sm:gap-16 mb-12">
