@@ -1,3 +1,5 @@
+import Script from "next/script";
+
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -14,15 +16,16 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Bhenchod of the Week",
-  description: "Vote for the Bhenchod of the Week. Meaning of Bhenchod. Indian swear word. Who is a Bhenchod? What is Bhenchod? Do people in India say Bhenchod or Panchod?",
+  description:
+    "Vote for the Bhenchod of the Week. Meaning of Bhenchod. Indian swear word. Who is a Bhenchod? What is Bhenchod? Do people in India say Bhenchod or Panchod?",
   keywords: [
-  "bhenchod",
-  "bhenchod of the week",
-  "India",
-  "bhenchod meaning",
-  "bhenchod translation",
-  "bhenchod in Indian",
-],
+    "bhenchod",
+    "bhenchod of the week",
+    "India",
+    "bhenchod meaning",
+    "bhenchod translation",
+    "bhenchod in Indian",
+  ],
 };
 
 export default function RootLayout({
@@ -37,6 +40,24 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
         {children}
+
+        <Script
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=G-T10EWL64QZ"
+        />
+
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+        >
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){window.dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-T10EWL64QZ');
+          `}
+        </Script>
       </body>
     </html>
   );
