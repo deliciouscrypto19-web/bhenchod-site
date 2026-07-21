@@ -192,6 +192,10 @@ export default function BhenchodOfTheWeek() {
         Bhenchod of the Week
       </h1>
 
+	<p className="text-center text-muted max-w-2xl mx-auto mb-8">
+  Who is the Bhenchod of the Week. What is the meaning of Bhenchod? The answer is here.
+	</p>
+
       {/* Featured Image */}
       <div className="flex justify-center mb-6">
         <div className="relative w-full max-w-md aspect-square flex items-center justify-center">

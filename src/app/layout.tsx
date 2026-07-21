@@ -14,7 +14,15 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Bhenchod of the Week",
-  description: "Vote for the Bhenchod of the Week",
+  description: "Vote for the Bhenchod of the Week. Meaning of Bhenchod. Indian swear word. Who is a Bhenchod? What is Bhenchod? Do people in India say Bhenchod or Panchod?",
+  keywords: [
+  "bhenchod",
+  "bhenchod of the week",
+  "India",
+  "bhenchod meaning",
+  "bhenchod translation",
+  "bhenchod in Indian",
+],
 };
 
 export default function RootLayout({
